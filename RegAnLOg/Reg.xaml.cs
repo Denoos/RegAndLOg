@@ -30,7 +30,7 @@ namespace RegAnLOg
             DataContext = this;
         }
 
-        private static Reg instance;
+        public static Reg instance;
         public static Reg getInstance()
         {
             if (instance == null)
@@ -38,14 +38,16 @@ namespace RegAnLOg
             return instance;
         }
 
+        public List<string> GetList() { return Saves; }
+
         private void Signed_Up(object sender, RoutedEventArgs e)
         {
             if (Password == PasswordIsChecked && IsChecked == true)
             {
                 Saves.Add(Login);
                 Saves.Add(Password);
-                MessageBox.Show("Вы успешно загестрировались w"+Login); 
-             MessageBox.Show(Login, Password); }
+                MessageBox.Show("Вы успешно загестрировались!"); 
+                MessageBox.Show(Login, Password); }
             else MessageBox.Show("Пересмотрите свои взгляды и переделайте правильно!!!!");
         }
     }

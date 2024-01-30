@@ -28,7 +28,9 @@ namespace RegAnLOg
         private void Signed_in(object sender, RoutedEventArgs e)
         {
             var reg = Reg.getInstance();
-            if (reg.Login == LogIN && reg.Password == PasswoRD)
+            List<string> list = reg.GetList();
+            //if (reg.Login == LogIN && reg.Password == PasswoRD)
+            if (list.Contains(LogIN) && list[list.IndexOf(LogIN) + 1] == PasswoRD )
             {MessageBox.Show("Вы вошли!!! Вам грозит тюремное заключение за просмотр хотсов с пингвинами)))"); }
             else MessageBox.Show("Вы не вошли, но Вам всё равно грозит тюремное заключение за просмотр хотсов с пингвинами)))");
         }
