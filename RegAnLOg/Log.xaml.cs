@@ -19,9 +19,18 @@ namespace RegAnLOg
     /// </summary>
     public partial class Log : Window
     {
+        public string LogIN { get; set; }
+        public string PasswoRD { get; set; }
         public Log()
         {
             InitializeComponent();
+        }
+        private void Signed_in(object sender, RoutedEventArgs e)
+        {
+            var reg = Reg.getInstance();
+            if (reg.Login == LogIN && reg.Password == PasswoRD)
+            {MessageBox.Show("Вы вошли!!! Вам грозит тюремное заключение за просмотр хотсов с пингвинами)))"); }
+            else MessageBox.Show("Вы не вошли, но Вам всё равно грозит тюремное заключение за просмотр хотсов с пингвинами)))");
         }
     }
 }
